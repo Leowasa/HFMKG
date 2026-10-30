@@ -1,0 +1,3 @@
+C:/Users/leonf/Desktop/Proyecto_mamalon/build/CMakeFiles/Proyecto_mamalon.dir
+C:/Users/leonf/Desktop/Proyecto_mamalon/build/CMakeFiles/edit_cache.dir
+C:/Users/leonf/Desktop/Proyecto_mamalon/build/CMakeFiles/rebuild_cache.dir
