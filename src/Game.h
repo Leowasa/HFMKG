@@ -1,5 +1,6 @@
 
 #include "Player.h"
+#include <memory>
 using namespace std;
 
 
@@ -7,7 +8,9 @@ class Game
 {
 
     private:
-            RenderWindow *window;       
+            RenderWindow *window;     
+            vector<Player> players;
+            Texture playerTexture;
     public:
             Game(RenderWindow *window);
             virtual ~Game();

@@ -4,25 +4,34 @@ Game::Game(RenderWindow *window)
 {
     this->window = window;
      this->window->setFramerateLimit(30);
-}
 
+      if(!playerTexture.loadFromFile("C:\\Users\\leonf\\Desktop\\Proyecto_mamalon\\build\\Textures\\Poliigon_ConcreteWorn_8690_Preview1.png"))
+    {
+        std::cout << "Error loading player texture" << std::endl;
+    }
+    else
+    {
+       this-> players.push_back(Player(&this->playerTexture, 22, 18, 0, 3, 57));
+    }
+}
 Game::~Game()
 {
-    delete window;
+    
 }
-
 void Game::Update()
 {
-    while (const std::optional event = window->pollEvent())
+    for (Player& player : players)
     {
-        if (event->is<sf::Event::Closed>())
-            window->close();
+        player.Update();
     }
 }
 
 void Game::Draw()
 {
-    window->clear();
-    // Add drawing code here
-    window->display();
+    this->window->clear();
+    for (Player& player : players)
+    {
+        player.Draw(*this->window);
+    }
+    this->window->display();
 }

@@ -5,7 +5,7 @@ using namespace sf;
 #include "Game.h"
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode({200, 200}), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML works!", sf::Style::Default);
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
     window.setFramerateLimit(30);
@@ -29,7 +29,7 @@ int main()
             }
 }
         }
-
+       
         game.Update();
         game.Draw();
     }

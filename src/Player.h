@@ -2,15 +2,18 @@
 #include "SFML/System.hpp"
 #include "SFML/Audio.hpp"
 #include <iostream>
+#include <vector>
+
 using namespace sf;
 
 class Player
 {
     private:
+    unsigned playerNumber;
     Texture *texture;
     Sprite Sprite;
     RectangleShape hitbox;
-
+    int controls[5];
     int level;
     int exp;
     int expNext;
@@ -25,11 +28,13 @@ class Player
 
     public:
         Player(Texture *texture);
+        Player(Texture *texture, int UP = 22, int DOWN = 18, int LEFT =0, int RIGHT =3, int SHOOT=57);
         virtual ~Player();
 
         void Update();
+        void Draw(RenderTarget &target);
         void Movement();
         void Draw();
 
-
+        static unsigned playerNR;
 };
